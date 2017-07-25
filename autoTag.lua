@@ -49,6 +49,7 @@ local ERROR_CANNOT_CONNECT_TO_IMAGGA_SERVER = 'Cannot connect to Imagga server'
 local ERROR_FAILED_TO_UPLOAD_FILE_TO_IMAGGA = 'Failed to upload a photo to Imagga'
 local ERROR_IMAGGA_PROCRSSING_IMAGE_UNSUCCESSFUL = 'Imagga : Processing image unsuccessful'
 local ERROR_SCRIPT_HAS_STOP_WORKING = 'Script has stop working'
+local ERROR_REQUIRE_API_KEY = 'Require Google or Imagga API Key to run this task'
 
 
 
@@ -299,6 +300,10 @@ local function createThumbnail(targetPhoto)
 				createErrorDialog(err)
 				is_error = true
 				return false
+			end
+			
+			if GOOGLE_API_KEY == '' and IMAGGA_API_KEY = '' then
+				createErrorDialog(ERROR_REQUIRE_API_KEY)
 			end
 			
 		
