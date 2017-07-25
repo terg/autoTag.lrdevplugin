@@ -302,7 +302,7 @@ local function createThumbnail(targetPhoto)
 				return false
 			end
 			
-			if GOOGLE_API_KEY == '' and IMAGGA_API_KEY = '' then
+			if GOOGLE_API_KEY == '' and IMAGGA_API_KEY == '' then
 				createErrorDialog(ERROR_REQUIRE_API_KEY)
 			end
 			
